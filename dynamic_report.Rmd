@@ -53,8 +53,6 @@ latest_data %>%
 max_rally_length <- latest_data %>% select(rally_length) %>% max
 # minimum value of rally_length
 min_rally_length <- latest_data %>% select(rally_length) %>% min
-
-# Dynamic comment based on summary values
 ```
 
 The longest rally observed was `r max_rally_length` hits.
