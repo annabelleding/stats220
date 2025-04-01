@@ -45,10 +45,7 @@ latest_data %>%
   labs(title = "Number of times server won or lost the point",
        x = "Did the Server Win the Point?",
        y = "Count")
-```
 
-
-```{r}
 # maximum value of rally_length
 max_rally_length <- latest_data %>% select(rally_length) %>% max
 
@@ -59,15 +56,4 @@ min_rally_length <- latest_data %>% select(rally_length) %>% min
 server_win_rate <- round(mean(latest_data$server_won_point == "Yes") * 100, 1)
 paste("The server won", server_win_rate, "% of rallies, showing",
       ifelse(server_win_rate > 50, "a slight advantage.", "no clear advantage."))
-```
-
-### Which shot type is most commonly used to win points?
-
-```{r, fig.width=10, fig.height=6}
-latest_data %>%
-  ggplot() +
-  geom_bar(aes(x = winning_shot, fill = winning_shot)) +
-  labs(title = "Number of times each shot type won a point",
-       x = "Shot Type",
-       y = "Count")
 ```
