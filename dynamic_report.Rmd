@@ -33,10 +33,29 @@ p {
 You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
 
 ```{r}
-pets <- c("cat", "dog", "turtle", "rabbit")
-best_pet <- pets[1]
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQcO3UQCilBXNfqDkpC62UYlOBErl05wG8pO1mF9UHwFR4h9og3SK_7fTo_a-gZ8Iaaho1Ke6Qt5ohc/pub?output=csv")
+
+latest_data <- logged_data %>%
+  rename(rally_length = 2,
+         server_won_point = 3,
+         winning_shot = 4)
+
+latest_data %>%
+  ggplot() + 
+  geom_bar(aes(x = server_won_point, fill = server_won_point)) +
+  labs(title = "Number of times server won or lost the point",
+       x = "Did the Server Win the Point?",
+       y = "Count")
+
+# minimum value of rally_length
+min_rally_length <- latest_data %>% select(rally_length) %>% min
+
+# maximum value of rally_length
+max_rally_length <- latest_data %>% select(rally_length) %>% max
 ```
 
-The best pet to have is a `r best_pet` of course!
+The shortest rally had `r min_rally_length` hit(s).
+
+The longest rally had `r max_rally_length` hits.
 
 ![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
