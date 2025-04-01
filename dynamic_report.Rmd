@@ -14,6 +14,9 @@ latest_data <- logged_data %>%
   rename(rally_length = 2,
          server_won_point = 3,
          winning_shot = 4)
+
+pets <- c("cat", "dog", "turtle", "rabbit")
+best_pet <- pets[1]
 ```
 
 ```{css}
@@ -46,10 +49,6 @@ latest_data %>%
   labs(title = "Number of times server won or lost the point",
        x = "Did the Server Win the Point?",
        y = "Count")
-
-pets <- c("cat", "dog", "turtle", "rabbit")
-best_pet <- pets[1]
-
 ```
 
 The best pet to have is a `r best_pet` of course!
