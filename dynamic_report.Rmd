@@ -17,7 +17,7 @@ h2 {
 }
 
 h3 {
-  color: #1E90FF;
+  color: #7678ED;
   font-size: 25px;
 }
 
@@ -29,8 +29,6 @@ p {
 ## Analysing Winning Strategies in World-Class Women's Singles Badminton Matches
 
 ### Does the server have an advantage in winning points?
-
-You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
 
 ```{r}
 logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQcO3UQCilBXNfqDkpC62UYlOBErl05wG8pO1mF9UHwFR4h9og3SK_7fTo_a-gZ8Iaaho1Ke6Qt5ohc/pub?output=csv")
@@ -56,6 +54,15 @@ max_rally_length <- latest_data %>% select(rally_length) %>% max
 
 The shortest rally had `r min_rally_length` hit(s).
 
-The longest rally had `r max_rally_length` hits.
+The longest rally had `r max_rally_length` hit(s).
 
-![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
+### Which shot type is most commonly used to win points?
+
+```{r, fig.width=10, fig.height=6}
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = winning_shot, fill = winning_shot)) +
+  labs(title = "Number of times each shot type won a point",
+       x = "Shot Type",
+       y = "Count")
+```
