@@ -5,16 +5,6 @@ output: html_fragment
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
-
-library(tidyverse)
-
-logged_data <- read_csv("stats220 (Responses) - Form responses 1.csv")
-glimpse(logged_data)
-
-latest_data <- logged_data %>%
-  rename(rally_length = 2,
-         server_won_point = 3,
-         winning_shot = 4)
 ```
 
 ```{css}
@@ -39,6 +29,16 @@ p {
 ### Does the server have an advantage in winning points?
 
 ```{r}
+library(tidyverse)
+
+logged_data <- read_csv("stats220 (Responses) - Form responses 1.csv")
+glimpse(logged_data)
+
+latest_data <- logged_data %>%
+  rename(rally_length = 2,
+         server_won_point = 3,
+         winning_shot = 4)
+
 latest_data %>%
   ggplot() + 
   geom_bar(aes(x = server_won_point, fill = server_won_point)) +
