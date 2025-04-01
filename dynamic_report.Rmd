@@ -7,16 +7,6 @@ output: html_fragment
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
 
 library(tidyverse)
-
-logged_data <- read_csv("stats220 (Responses) - Form responses 1.csv")
-
-latest_data <- logged_data %>%
-  rename(rally_length = 2,
-         server_won_point = 3,
-         winning_shot = 4)
-
-pets <- c("cat", "dog", "turtle", "rabbit")
-best_pet <- pets[1]
 ```
 
 ```{css}
@@ -43,12 +33,8 @@ p {
 You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
 
 ```{r}
-latest_data %>%
-  ggplot() + 
-  geom_bar(aes(x = server_won_point, fill = server_won_point)) +
-  labs(title = "Number of times server won or lost the point",
-       x = "Did the Server Win the Point?",
-       y = "Count")
+pets <- c("cat", "dog", "turtle", "rabbit")
+best_pet <- pets[1]
 ```
 
 The best pet to have is a `r best_pet` of course!
