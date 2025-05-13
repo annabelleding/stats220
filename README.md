@@ -4,7 +4,7 @@
 
 A little about me:
 
-1. I am in my fourth (and final year) of my Bachelors degree in *Business Analytics* and *Computer Science*.
+1. I am in my fourth (and final) year of my Bachelors degree in *Business Analytics* and *Computer Science*.
 2. Badminton is my favourite sport, and I love to watch the games of the top players: [https://www.youtube.com/@bwftv](https://www.youtube.com/@bwftv).
 3. I am taking **STATS 220** because I want to get better at R, as well as gain the skills to make data-driven decisions and solve analytical problems.
 4. I am interested in learning about the different steps involved in processing data and how to interpret and communicate findings.
